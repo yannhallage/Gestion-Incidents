@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import LoginPage from "../pages/loginPage";  // Assure-toi que ton chemin est correct
-import PersonalHome from "../pages/personalHome";
+import Personal from "../pages/personal";
 import Connexion from "../pages/connexion"
 import Inscription from "../pages/inscription"
 
@@ -12,7 +12,7 @@ const PremierRoute = () => {
         <Route path="/" element={<LoginPage />} />
 
         {/* Page de Login */}
-        <Route path="/personalHome" element={<PersonalHome />} />
+        <Route path="/personnel" element={<Personal />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={< Inscription/>} />
       </Routes>

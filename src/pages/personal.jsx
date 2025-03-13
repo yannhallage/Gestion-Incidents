@@ -1,5 +1,5 @@
 
-const PersonalHome = ()=>{
+const Personal = ()=>{
 
     retrun (
         <>
@@ -10,4 +10,4 @@ const PersonalHome = ()=>{
     )
 }
 
-export default PersonalHome;
+export default Personal;
