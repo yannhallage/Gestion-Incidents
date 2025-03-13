@@ -1,105 +1,246 @@
-import React, { useState } from 'react';
+import React from 'react';
+import '../styles/personnal.css';
 
-function DashboardLayout() {
-  // State to toggle sidebar visibility on mobile
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+const App = () => {
+  const containerStyle = {
+    display: 'flex',
+    height: '100vh',
+    backgroundColor: '#111b21',
+    color: '#e9edec',
+    fontFamily: 'Arial, sans-serif',
+  };
+
+  const menuStyle = {
+    width: '100px',
+    backgroundColor: '',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '10px 0',
+  };
+
+  const menuItemStyle = {
+    padding: '15px 0',
+    cursor: 'pointer',
+  };
+
+  const menuBottomStyle = {
+    ...menuItemStyle,
+    marginTop: 'auto',
+  };
+
+  const menuIconStyle = {
+    width: '30px',
+    height: '30px',
+    borderRadius: '50%',
+  };
+
+  const sidebarStyle = {
+    width: '700px',
+    backgroundColor: '#202d35',
+    padding: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+  };
+
+  const searchBarStyle = {
+    width: '100%',
+    padding: '10px',
+    marginBottom: '10px',
+    border: 'none',
+    borderRadius: '5px',
+    backgroundColor: '#2a3942',
+    color: '#e9edec',
+  };
+
+  const tabsStyle = {
+    display: 'flex',
+    gap: '5px',
+    marginBottom: '10px',
+  };
+
+  const tabStyle = {
+    backgroundColor: '#2a3942',
+    border: 'none',
+    padding: '10px',
+    color: '#e9edec',
+    cursor: 'pointer',
+  };
+
+  const activeTabStyle = {
+    ...tabStyle,
+    backgroundColor: '#075e54',
+  };
+
+  const archivedButtonStyle = {
+    width: '100%',
+    padding: '10px',
+    backgroundColor: '#2a3942',
+    border: 'none',
+    color: '#e9edec',
+    cursor: 'pointer',
+  };
+
+  const chatListStyle = {
+    flexGrow: 1,
+    overflowY: 'auto',
+  };
+
+  const chatItemStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '10px',
+    borderBottom: '1px solid #2a3942',
+  };
+
+  const chatImageStyle = {
+    width: '40px',
+    height: '40px',
+    borderRadius: '50%',
+    marginRight: '10px',
+  };
+
+  const chatDetailsStyle = {
+    flexGrow: 1,
+  };
+
+  const chatNameStyle = {
+    fontWeight: 'bold',
+  };
+
+  const chatMessageStyle = {
+    color: '#8696a0',
+    fontSize: '14px',
+  };
+
+  const chatTimeStyle = {
+    fontSize: '12px',
+    color: '#8696a0',
+    marginLeft: '10px',
+  };
+
+  const chatUnreadStyle = {
+    backgroundColor: '#075e54',
+    color: 'white',
+    padding: '2px 8px',
+    borderRadius: '50%',
+    fontSize: '12px',
+  };
+
+  const mainContentStyle = {
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#111b21',
+    width: '100%',
+  };
+
+  const whatsappBannerStyle = {
+    textAlign: 'center',
+    maxWidth: '500px',
+  };
+
+  const bannerImageStyle = {
+    marginBottom: '20px',
+  };
+
+  const bannerTextStyle = {
+    marginBottom: '10px',
+  };
+
+  const bannerParagraphStyle = {
+    color: '#8696a0',
+    marginBottom: '20px',
+  };
+
+  const downloadButtonStyle = {
+    backgroundColor: '#075e54',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  };
+
+  const securityNoteStyle = {
+    fontSize: '12px',
+    color: '#8696a0',
+    marginTop: '10px',
+  };
+
 
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white font-sans">
-      {/* Navbar */}
-      <nav className="bg-blue-900 shadow-md p-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="text-2xl text-blue-400"><i className="fa-solid fa-headset"></i></div>
-          <span className="text-xl font-bold"></span>
+    <div style={containerStyle}>
+      {/* Menu latéral à gauche */}
+      <div style={menuStyle}>
+        <div style={menuItemStyle}>
+          {/* <img src="https://via.placeholder.com/30" alt="Profil" style={menuIconStyle} /> */}
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <div style={menuItemStyle}>
+          <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" fill="none"><title>chats-filled</title><path fill-rule="evenodd" clip-rule="evenodd" d="M4.8384 8.45501L5 8.70356V9V17.8333C5 18.7538 5.7462 19.5 6.6667 19.5H20.3333C21.2538 19.5 22 18.7538 22 17.8333V6.66667C22 5.74619 21.2538 5 20.3333 5H2.5927L4.8384 8.45501ZM8 14.5C8 13.6716 8.67157 13 9.5 13H14.5C15.3284 13 16 13.6716 16 14.5C16 15.3284 15.3284 16 14.5 16H9.5C8.67157 16 8 15.3284 8 14.5ZM9.5 8C8.67157 8 8 8.67157 8 9.5C8 10.3284 8.67157 11 9.5 11H16.5C17.3284 11 18 10.3284 18 9.5C18 8.67157 17.3284 8 16.5 8H9.5Z" fill="currentColor"></path><path d="M5 8.70356L5.41919 8.43101L5.5 8.55531V8.70356H5ZM4.8384 8.45501L4.41921 8.72756L4.41917 8.7275L4.8384 8.45501ZM2.5927 5L2.17347 5.27249L1.67137 4.5H2.5927V5ZM4.58081 8.9761L4.41921 8.72756L5.25759 8.18247L5.41919 8.43101L4.58081 8.9761ZM4.5 9V8.70356H5.5V9H4.5ZM4.5 17.8333V9H5.5V17.8333H4.5ZM6.6667 20C5.47006 20 4.5 19.0299 4.5 17.8333H5.5C5.5 18.4777 6.02234 19 6.6667 19V20ZM20.3333 20H6.6667V19H20.3333V20ZM22.5 17.8333C22.5 19.0299 21.53 20 20.3333 20V19C20.9777 19 21.5 18.4777 21.5 17.8333H22.5ZM22.5 6.66667V17.8333H21.5V6.66667H22.5ZM20.3333 4.5C21.53 4.5 22.5 5.47005 22.5 6.66667H21.5C21.5 6.02233 20.9777 5.5 20.3333 5.5V4.5ZM2.5927 4.5H20.3333V5.5H2.5927V4.5ZM4.41917 8.7275L2.17347 5.27249L3.01192 4.72751L5.25762 8.18252L4.41917 8.7275ZM9.5 13.5C8.94772 13.5 8.5 13.9477 8.5 14.5H7.5C7.5 13.3954 8.39543 12.5 9.5 12.5V13.5ZM14.5 13.5H9.5V12.5H14.5V13.5ZM15.5 14.5C15.5 13.9477 15.0523 13.5 14.5 13.5V12.5C15.6046 12.5 16.5 13.3954 16.5 14.5H15.5ZM14.5 15.5C15.0523 15.5 15.5 15.0523 15.5 14.5H16.5C16.5 15.6046 15.6046 16.5 14.5 16.5V15.5ZM9.5 15.5H14.5V16.5H9.5V15.5ZM8.5 14.5C8.5 15.0523 8.94772 15.5 9.5 15.5V16.5C8.39543 16.5 7.5 15.6046 7.5 14.5H8.5ZM7.5 9.5C7.5 8.39543 8.39543 7.5 9.5 7.5V8.5C8.94772 8.5 8.5 8.94772 8.5 9.5H7.5ZM9.5 11.5C8.39543 11.5 7.5 10.6046 7.5 9.5H8.5C8.5 10.0523 8.94772 10.5 9.5 10.5V11.5ZM16.5 11.5H9.5V10.5H16.5V11.5ZM18.5 9.5C18.5 10.6046 17.6046 11.5 16.5 11.5V10.5C17.0523 10.5 17.5 10.0523 17.5 9.5H18.5ZM16.5 7.5C17.6046 7.5 18.5 8.39543 18.5 9.5H17.5C17.5 8.94772 17.0523 8.5 16.5 8.5V7.5ZM9.5 7.5H16.5V8.5H9.5V7.5Z" fill="currentColor"></path></svg>
+
+        </div>
+        <div style={menuItemStyle}>
+          {/* <img src="https://via.placeholder.com/30" alt="Nouvelle discussion" style={menuIconStyle} /> */}
+          <i class="fa-solid fa-plus"></i>
+          {/* <i class="fa-solid fa-clock-rotate-left"></i> */}
+        </div>
+        <div style={menuItemStyle}>
+          {/* <img src="https://via.placeholder.com/30" alt="Menu" style={menuIconStyle} /> */}
+          <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+        <div style={menuBottomStyle}>
+          {/* <img src="https://via.placeholder.com/30" alt="Paramètres" style={menuIconStyle} /> */}
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+      </div>
+
+      {/* Sidebar (liste des discussions) */}
+      <div style={sidebarStyle} className=''>
+        <div className='mt-2 text-xl'>
+          <h2 >interface utilisateur</h2>
+        </div>
+        <div>
+          <input type="text" placeholder="Rechercher" style={searchBarStyle} />
+        </div>
+        <div style={tabsStyle}>
+          <button style={activeTabStyle}>Tout</button>
+          <button style={tabStyle}>Non lus</button>
+          <button style={tabStyle}>Favoris</button>
+          <button style={tabStyle}>Groupes</button>
         </div>
 
-        {/* Navbar Links (Desktop) */}
-        <div className="hidden md:flex space-x-6">
-          <a href="#" className="text-gray-300 hover:text-blue-400">Home</a>
-          <a href="#" className="text-gray-300 hover:text-blue-400">Profile</a>
-          <a href="#" className="text-gray-300 hover:text-blue-400">Settings</a>
+        <div style={chatListStyle}>
+          {/* <div style={chatItemStyle}>
+            <img src="https://via.placeholder.com/40" alt="Moko" style={chatImageStyle} />
+            <div style={chatDetailsStyle}>
+              <div style={chatNameStyle}>Moko</div>
+              <div style={chatMessageStyle}>Ouais 😄💰</div>
+            </div>
+            <div style={chatTimeStyle}>19:39</div>
+            <div style={chatUnreadStyle}>1</div>
+          </div> */}
         </div>
+      </div>
 
-        {/* User Profile / Logout */}
-        <div className="flex items-center space-x-4">
-          <span className="text-gray-300">John Doe</span>
-          <button className="bg-blue-400 text-white py-1 px-3 rounded-lg">Logout</button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-300 focus:outline-none"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </nav>
-
-      {/* Main Layout (Sidebar + Content) */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <aside
-          className={`${
-            isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          } md:translate-x-0 fixed md:static top-0 left-0 h-full w-64 bg-gray-700 p-6 transition-transform duration-300 ease-in-out z-20`}
-        >
-          <div className="flex items-center space-x-2 mb-8">
-            <div className="text-2xl text-blue-400"><i className="fa-solid fa-headset"></i></div>
-            <span className="text-xl font-bold"></span>
+      {/* Main Content */}
+      <div style={mainContentStyle}>
+        <div style={whatsappBannerStyle}>
+          <img src="https://via.placeholder.com/300x200" alt="WhatsApp Call" style={bannerImageStyle} />
+          <div>
+            <h1 style={bannerTextStyle}>Télécharger WhatsApp pour Windows</h1>
+            <p style={bannerParagraphStyle}>
+              Passez des appels, partagez votre écran et profitez d’une expérience plus rapide en téléchargeant l’application Windows.
+            </p>
+            <button style={downloadButtonStyle}>Télécharger</button>
+            <p style={securityNoteStyle}>Vos messages personnels sont chiffrés de bout en bout</p>
           </div>
-
-          {/* Sidebar Links */}
-          <nav className="space-y-4">
-            <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-              </svg>
-              <span>Dashboard</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-              </svg>
-              <span>Messages</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-              </svg>
-              <span>Profile</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <span>Settings</span>
-            </a>
-          </nav>
-        </aside>
-
-        {/* Overlay for Mobile Sidebar */}
-        {isSidebarOpen && (
-          <div
-            className="fixed inset-0 bg-black opacity-50 md:hidden"
-            onClick={() => setIsSidebarOpen(false)}
-          ></div>
-        )}
-
-        {/* Main Content */}
-        <main className="flex-1 p-6 overflow-y-auto">
-          <h1 className="text-3xl font-bold mb-4">Welcome to Bluesky</h1>
-          <p className="text-gray-300">
-            This is your dashboard. You can navigate using the sidebar on the left or the navbar above.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </main>
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default DashboardLayout;
+export default App;

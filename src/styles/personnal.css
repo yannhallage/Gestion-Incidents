@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #111b21; /* Fond sombre uniforme */
+  color: #e9edec;
+  font-family: Arial, sans-serif;
+}
+
+/* Menu latéral à gauche */
+.menu {
+  width: 50px;
+  background-color: #202d35;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.menu-item {
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.menu-bottom {
+  margin-top: auto; /* Pousse l'icône des paramètres vers le bas */
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Sidebar (liste des discussions) */
+.sidebar {
+  width: 300px;
+  background-color: #202d35;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a3942;
+  color: #e9edec;
+}
+
+.tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  background-color: #2a3942;
+  border: none;
+  padding: 10px;
+  color: #e9edec;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #075e54;
+}
+
+.archived button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a3942;
+  border: none;
+  color: #e9edec;
+  cursor: pointer;
+}
+
+.chat-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #2a3942;
+}
+
+.chat-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-details {
+  flex-grow: 1;
+}
+
+.chat-name {
+  font-weight: bold;
+}
+
+.chat-message {
+  color: #8696a0;
+  font-size: 14px;
+}
+
+.chat-time {
+  font-size: 12px;
+  color: #8696a0;
+  margin-left: 10px;
+}
+
+.chat-unread {
+  background-color: #075e54;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111b21; /* Assure que le fond reste sombre */
+  width: 100%; /* S'assure que le contenu principal prend toute la largeur disponible */
+}
+
+.whatsapp-banner {
+  text-align: center;
+  max-width: 500px; /* Limite la largeur de la bannière pour éviter qu'elle ne s'étende trop */
+}
+
+.whatsapp-banner img {
+  margin-bottom: 20px;
+}
+
+.banner-text h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  color: #8696a0;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  background-color: #075e54;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.security-note {
+  font-size: 12px;
+  color: #8696a0;
+  margin-top: 10px;
+}
