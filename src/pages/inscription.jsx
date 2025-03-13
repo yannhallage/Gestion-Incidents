@@ -8,7 +8,7 @@ const Inscription = () => {
     };
     return (
         <div className="flex h-screen bg-gray-900 text-white font-sans">
-            <div className="grid md:grid-cols-2 grid-cols-1">
+            {/* <div className="grid md:grid-cols-2 grid-cols-1"> */}
                 {/* Left Section */}
                 <div className="flex flex-col justify-center p-12 ml-10 md:ml-20 lg:ml-32">
                     <h1 className="text-6xl font-bold text-blue-400 mb-4">Créer un <br /> compte</h1>
@@ -70,7 +70,7 @@ const Inscription = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </div>
     )
 }

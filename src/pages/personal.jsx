@@ -1,11 +1,11 @@
+import DashboardLayout from "../components/navbar";
 
 const Personal = ()=>{
 
-    retrun (
+    return (
         <>
-            <span>
-                page d'acceuil personnel
-            </span>
+        <DashboardLayout />
+        {/* <Sidebar /> */}
         </>
     )
 }
