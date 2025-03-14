@@ -2,14 +2,6 @@ import InfoAlert from "../infoAlert";
 
 const Sidebar = () => {
 
-    const sidebarStyle = {
-        width: '700px',
-        backgroundColor: '#f1f1f1',
-        padding: '10px',
-        display: 'flex',
-        flexDirection: 'column',
-    };
-
     const searchBarStyle = {
         width: '100%',
         padding: '4px',
@@ -27,7 +19,7 @@ const Sidebar = () => {
     };
 
     const tabStyle = {
-        backgroundColor: '#2a3942',
+        backgroundColor: '#fff',
         border: 'none',
         padding: '4px',
         color: '#e9edec',
@@ -41,8 +33,8 @@ const Sidebar = () => {
 
     return (
         <>
-            <div style={sidebarStyle} className=''>
-                <div className='mt-2 text-xl text-black font-bold'>
+            <div className="">
+                <div className='mt-2 text-2xl text-black font-bold'>
                     <h2 >interface utilisateur</h2>
                 </div>
                 <div className='mt-7'>
@@ -57,8 +49,9 @@ const Sidebar = () => {
                     </div>
                 </div>
 
-                <div className='flex flex-col h-screen flex-1 flex flex-col items-center justify-center'>
-                    <InfoAlert 
+                <div className='flex flex-col  flex-1 flex flex-col items-center justify-center'>
+                    <InfoAlert
+                    sms="Aucun Ticket cree"
                     />
                 </div>
             </div>

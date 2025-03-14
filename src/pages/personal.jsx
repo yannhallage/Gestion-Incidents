@@ -1,4 +1,4 @@
-import DashboardLayout from "../components/navbar";
+import DashboardLayout from "../components/dashboardLayout";
 
 const Personal = ()=>{
 
