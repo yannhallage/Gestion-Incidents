@@ -12,7 +12,7 @@ const PremierRoute = () => {
         <Route path="/" element={<LoginPage />} />
 
         {/* Page de Login */}
-        <Route path="/personnel" element={<Personal />} />
+        <Route path="/utilisateur" element={<Personal />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={< Inscription/>} />
       </Routes>

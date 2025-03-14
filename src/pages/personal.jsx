@@ -5,7 +5,6 @@ const Personal = ()=>{
     return (
         <>
         <DashboardLayout />
-        {/* <Sidebar /> */}
         </>
     )
 }
