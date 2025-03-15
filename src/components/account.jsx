@@ -1,4 +1,4 @@
-
+import ButtonClassic from "./buttonClassic";
 
 const AccountComponent = () => {
     const searchBarStyle = {
@@ -29,13 +29,34 @@ const AccountComponent = () => {
         ...tabStyle,
         backgroundColor: '#075e54',
     };
+
+    const SignOut = ()=>{
+        // Sign out logic here
+        Swal.fire({
+            title: "Se deconnecter",
+            text: "Voulez-vous vraiment vous deconnecter ?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "deconnecter"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deconnecté",
+                text: "Vous etre deconnecter",
+                icon: "success"
+              });
+            }
+          });
+    }
     return (
         <>
             <div className="">
                 <div className='mt-2 text-xl text-black font-bold'>
                     <h2 >Compte utilisateur</h2>
                 </div>
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-[14px]">
                     Loruia, neque debitis fugiat dolores id eligendi perspiciatis voluptatibus, deserunt ullam excepturi, vitae at reiciendis quibusdam cupiditate adipisci nostrum aliquid?
                 </p>
                 <div className="mt-9">
@@ -66,6 +87,14 @@ const AccountComponent = () => {
                             <span className="">
                                 14/03/2025
                             </span> <br />
+                        </div>
+
+                        <div className="text-center mt-14 text-[14px]">
+                            <ButtonClassic 
+                                tile={'Se deconnecter'}
+                                color={'border p-3 bg-red-400 text-white py-2 cursor-pointer px-4 rounded'}
+                                event={SignOut}
+                            />
                         </div>
                 </div>
             </div>

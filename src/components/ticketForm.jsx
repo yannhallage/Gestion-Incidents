@@ -1,7 +1,9 @@
-import React from 'react';
-import ButtonClassic from './buttonClassic';
+import React, { useRef } from 'react';
 
 const TicketForm = () => {
+
+    const inputref = useRef({})
+
     const mainContentStyle = {
         width: '100%',
         height: '100%',
@@ -20,8 +22,15 @@ const TicketForm = () => {
 
     // Placeholder pour les actions des boutons
     const handleSave = () => {
-        console.log('Enregistrer cliqué');
-        // Ajoutez votre logique ici
+        inputref.current.innerHTML = 'chargement..'
+        setTimeout(() => {
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success"
+            });
+            inputref.current.innerHTML = 'Enregistrer'
+        }, 2000)
     };
 
     const handleClear = () => {
@@ -31,21 +40,22 @@ const TicketForm = () => {
 
     return (
         <div style={mainContentStyle}>
-            <form style={formStyle} className="space-y-6 ">
+            <form style={formStyle} className="space-y-6 shadow-md rounded-md">
                 {/* Entête */}
                 <div className="flex justify-between items-center text-black p-3 border-b border-gray-300">
                     <span className="text-xl font-bold">Description de la panne</span>
                     <div className="space-x-2">
                         <button
                             type="button"
-                            className="bg-blue-400 text-white px-3 py-1 text-sm rounded hover:bg-blue-500 transition-colors"
+                            className="bg-blue-400 text-white cursor-pointer px-3 py-1 text-sm rounded hover:bg-blue-500 transition-colors"
                             onClick={handleSave}
+                            ref={inputref}
                         >
                             Enregistrer
                         </button>
                         <button
                             type="button"
-                            className="bg-gray-700 text-white px-3 py-1 text-sm rounded hover:bg-gray-800 transition-colors"
+                            className="bg-gray-700 text-white cursor-pointer px-3 py-1 text-sm rounded hover:bg-gray-800 transition-colors"
                             onClick={handleClear}
                         >
                             Vider

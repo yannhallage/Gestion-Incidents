@@ -51,7 +51,7 @@ const Sidebar = () => {
 
                 <div className='flex flex-col  flex-1 flex flex-col items-center justify-center'>
                     <InfoAlert
-                    sms="Aucun Ticket cree"
+                    sms="Vous verrez les Tikets que vous avez creer ici."
                     />
                 </div>
             </div>

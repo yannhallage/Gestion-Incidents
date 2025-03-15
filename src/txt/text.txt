@@ -78,3 +78,389 @@
   //   color: '#8696a0',
   //   marginTop: '10px',
   // };
+
+
+
+<svg width="20" height="20" fill="currentColor" class="mr-2 animate-spin" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M526 1394q0 53-37.5 90.5t-90.5 37.5q-52 0-90-38t-38-90q0-53 37.5-90.5t90.5-37.5 90.5 37.5 37.5 90.5zm498 206q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-704-704q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm1202 498q0 52-38 90t-90 38q-53 0-90.5-37.5t-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-964-996q0 66-47 113t-113 47-113-47-47-113 47-113 113-47 113 47 47 113zm1170 498q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-640-704q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm530 206q0 93-66 158.5t-158 65.5q-93 0-158.5-65.5t-65.5-158.5q0-92 65.5-158t158.5-66q92 0 158 66t66 158z">
+                    </path>
+                </svg>
+
+
+
+                /* personnal.css */
+
+/* Personnalisation des barres de défilement pour Webkit (Chrome, Safari) */
+div::-webkit-scrollbar {
+  width: 8px; /* Largeur de la barre de défilement */
+}
+
+div::-webkit-scrollbar-track {
+  background: #2a3942; /* Couleur de la piste (arrière-plan) */
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #075e54; /* Couleur de la barre elle-même */
+  border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: #064c40; /* Couleur au survol */
+}
+
+/* Firefox (utilise des propriétés spécifiques) */
+div {
+  scrollbar-width: thin; /* Épaisseur de la barre */
+  scrollbar-color: #075e54 #2a3942; /* Couleur de la barre et de la piste */
+}
+
+
+
+
+
+
+
+// HistoriqueComponent.js
+import React, { useEffect, useState, useContext } from 'react';
+import InfoAlert from './infoAlert';
+import DialogComponent from './diposition/dialogComponent';
+import { chats } from '../api/apiDataFirste';
+import { SecondContext } from '../context/FirsContext';
+import '../styles/styles'
+
+
+const HistoriqueComponent = () => {
+    const [apiC, setApiC] = useState(null);
+    const { ticket, setTicket } = useContext(SecondContext);
+
+    const chatListStyle = {
+        flexGrow: 1,
+        overflowY: 'auto', // Défilement déjà présent
+        maxHeight: 'calc(100vh - 150px)', // Hauteur maximale pour limiter la section et activer le défilement
+    };
+
+    const chatItemStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        padding: '10px',
+        borderBottom: '1px solid',
+    };
+
+    const chatImageStyle = {
+        width: '40px',
+        height: '40px',
+        borderRadius: '50%',
+        marginRight: '10px',
+    };
+
+    const chatDetailsStyle = {
+        flexGrow: 1,
+    };
+
+    const chatNameStyle = {
+        fontWeight: 'bold',
+        color: 'black',
+    };
+
+    const chatMessageStyle = {
+        color: '#8696a0',
+        fontSize: '14px',
+    };
+
+    const chatTimeStyle = {
+        fontSize: '12px',
+        color: '#8696a0',
+        marginLeft: '10px',
+    };
+
+    const chatUnreadStyle = {
+        backgroundColor: '#075e54',
+        color: 'white',
+        padding: '2px 8px',
+        borderRadius: '50%',
+        fontSize: '12px',
+    };
+
+    // Augmenter les données pour tester le défilement
+  const extendedChats = [
+        ...chats,
+        ...Array.from({ length: 50 }).map((_, index) => ({
+            name: `TicketD00${chats.length + index + 1}`,
+            message: 'Le ticket a été clôturé cela signifie que notre équipe IT a réglé votre panne',
+            time: '15/03/2025',
+        })),
+    ];
+
+    useEffect(() => {
+        if (apiC !== null) {
+            setTicket(<DialogComponent donnee={apiC - 1} />);
+        }
+    }, [apiC, setTicket]);
+
+    return (
+        <>
+            <div className="">
+                <div className="mt-2 text-xl text-black font-bold">
+                    <h2>Historique</h2>
+                </div>
+                <p className="text-gray-400 text-[14px]">
+                    ique sint quia, neque debitis fugiat dolores id eligendi perspiciatis voluptatibus,
+                    deserunt ullam excepturi, vitae at reiciendis quibusdam cupiditate adipisci nostrum
+                    aliquid?
+                </p>
+                <div className="mt-5">
+                    <hr />
+                </div>
+                <div className="flex flex-col bg-white flex-1 items-center justify-center" >
+                    <div style={chatListStyle}>
+                        {extendedChats.map((chat, index) => (
+                            <div key={index} style={chatItemStyle}>
+                                <span className="text-[#ccc]">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="size-7"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M15 13.5H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+                                        />
+                                    </svg>
+                                </span>
+
+                                <div style={chatDetailsStyle} className="ml-2 mt-2">
+                                    <div style={chatNameStyle} className="flex space-x-3">
+                                        <span
+                                            className="text-[14px] cursor-pointer"
+                                            onClick={() => {
+                                                setApiC(index + 1);
+                                            }}
+                                        >
+                                            TicketD00{index + 1}
+                                        </span>
+                                    </div>
+                                    <div style={chatMessageStyle}>
+                                        le ticket a été clôturé cela signifie que notre équipe IT a réglé votre panne
+                                    </div>
+                                </div>
+                                <div style={chatTimeStyle}>15/03/2025</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default HistoriqueComponent;
+
+
+
+
+
+
+
+import {apiDataFirste} from '../../api/apiDataFirste'
+
+const DialogComponent = ({ donnee }) => {
+    if (donnee) {
+        console.log("donnee existe " + donnee)
+    }
+    return (
+        <>
+            <div className="border border-[#ccc] p-5 text-black text-[14px]">
+                <div className="">
+                    <div className="">
+                        <span className="text-2xl">
+                            DESCRIPTION DE LA PANNE SIGNALER
+                        </span>
+                        <br /> <br />
+                        <span className="text-xl font-bold">
+                            Reference ticket : Ticket001
+                        </span>
+                    </div>
+                    <div className="mt-11 text-xl">
+                        <span>
+                            Certains utilisateurs d'Actions constatent  que leurs tâches de workflow ne démarrent pas.
+                        </span>
+                    </div>
+                    {/* description de l'utilisateur */}
+                    <div className="mt-11">
+                        <span>
+                            ' Une forme de données inattendue a provoqué des plantages dans certains de nos pods. Nous avons atténué l'incident agesattendue et amélioré la résilience globale de notre service face à de tels incidents. '
+                        </span>
+                    </div>
+                    {/* mot de l'equipe */}
+                    <div className="mt-11 font-bold">
+                        <span>
+                            Bonjour, <br />vous recevez se message car vous avez signaler une panne recemment a votre bureau <br />
+                            suite a votre pleinte nos equipes se sont charger a resoudre votre probleme <br />
+                            ce message vous informe que la panne detecter recemment a été resolu ,vous pouvez continuer vos service tout en gardant en tete que l'Equipe IT se charge de veiller a votre attente 
+                            <br /><br />
+                            Merci , Equipe IT
+                        </span>
+                    </div>
+                    {/*  */}
+                    <div className="mt-9 text-[15px]">
+                        <span>
+                           date de creation ticket : 15/03/2024 <br />
+                           Statut : Resolu <br />
+                           panne resolu :  15/03/2024 <br />
+                           Assistance : IT0029
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default DialogComponent;
+
+
+
+
+// HistoriqueComponent.js
+import React, { useEffect, useState, useContext } from 'react';
+import InfoAlert from './infoAlert';
+import DialogComponent from './diposition/dialogComponent';
+import { chats } from '../api/apiDataFirste';
+import { SecondContext } from '../context/FirsContext';
+import '../styles/styles'
+
+
+const HistoriqueComponent = () => {
+    const [apiC, setApiC] = useState(null);
+    const { ticket, setTicket } = useContext(SecondContext);
+
+    const chatListStyle = {
+        flexGrow: 1,
+        overflowY: 'auto', // Défilement déjà présent
+        maxHeight: 'calc(100vh - 150px)', // Hauteur maximale pour limiter la section et activer le défilement
+    };
+
+    const chatItemStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        padding: '10px',
+        borderBottom: '1px solid',
+    };
+
+    const chatImageStyle = {
+        width: '40px',
+        height: '40px',
+        borderRadius: '50%',
+        marginRight: '10px',
+    };
+
+    const chatDetailsStyle = {
+        flexGrow: 1,
+    };
+
+    const chatNameStyle = {
+        fontWeight: 'bold',
+        color: 'black',
+    };
+
+    const chatMessageStyle = {
+        color: '#8696a0',
+        fontSize: '14px',
+    };
+
+    const chatTimeStyle = {
+        fontSize: '12px',
+        color: '#8696a0',
+        marginLeft: '10px',
+    };
+
+    const chatUnreadStyle = {
+        backgroundColor: '#075e54',
+        color: 'white',
+        padding: '2px 8px',
+        borderRadius: '50%',
+        fontSize: '12px',
+    };
+
+    // Augmenter les données pour tester le défilement
+  const extendedChats = [
+        ...chats,
+        ...Array.from({ length: 50 }).map((_, index) => ({
+            name: `TicketD00${chats.length + index + 1}`,
+            message: 'Le ticket a été clôturé cela signifie que notre équipe IT a réglé votre panne',
+            time: '15/03/2025',
+        })),
+    ];
+
+    useEffect(() => {
+        if (apiC !== null) {
+            setTicket(<DialogComponent donnee={apiC - 1} />);
+        }
+    }, [apiC, setTicket]);
+
+    return (
+        <>
+            <div className="">
+                <div className="mt-2 text-xl text-black font-bold">
+                    <h2>Historique</h2>
+                </div>
+                <p className="text-gray-400 text-[14px]">
+                    ique sint quia, neque debitis fugiat dolores id eligendi perspiciatis voluptatibus,
+                    deserunt ullam excepturi, vitae at reiciendis quibusdam cupiditate adipisci nostrum
+                    aliquid?
+                </p>
+                <div className="mt-5">
+                    <hr />
+                </div>
+                <div className="flex flex-col bg-white flex-1 items-center justify-center" >
+                    <div style={chatListStyle}>
+                        {extendedChats.map((chat, index) => (
+                            <div key={index} style={chatItemStyle}>
+                                <span className="text-[#ccc]">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="size-7"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M15 13.5H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+                                        />
+                                    </svg>
+                                </span>
+
+                                <div style={chatDetailsStyle} className="ml-2 mt-2">
+                                    <div style={chatNameStyle} className="flex space-x-3">
+                                        <span
+                                            className="text-[14px] cursor-pointer"
+                                            onClick={() => {
+                                                setApiC(index + 1);
+                                            }}
+                                        >
+                                            TicketD00{index + 1}
+                                        </span>
+                                    </div>
+                                    <div style={chatMessageStyle}>
+                                        le ticket a été clôturé cela signifie que notre équipe IT a réglé votre panne
+                                    </div>
+                                </div>
+                                <div style={chatTimeStyle}>15/03/2025</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default HistoriqueComponent;
