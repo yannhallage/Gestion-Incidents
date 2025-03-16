@@ -3,6 +3,7 @@ import LoginPage from "../pages/loginPage";  // Assure-toi que ton chemin est co
 import Personal from "../pages/personal";
 import Connexion from "../pages/connexion"
 import Inscription from "../pages/inscription"
+import Technicien from "../pages/technicien"
 
 const PremierRoute = () => {
   return (
@@ -15,6 +16,8 @@ const PremierRoute = () => {
         <Route path="/utilisateur" element={<Personal />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={< Inscription/>} />
+        <Route path="/technicien" element={< Technicien/>} />
+        {/* <Route path="/admin" element={< Inscription/>} /> */}
       </Routes>
     </Router>
   );
