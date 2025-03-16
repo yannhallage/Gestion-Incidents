@@ -30,3 +30,14 @@ export const extendedChatss = [
   { id:"D0098",name: 'Dion Inès',  creationticket : '15/03/2024',Priorité : 'moyen',statut : 'Resolu', message: "Protéger notre planète est crucial pour garantir un avenir durable. En réduisant les déchets, en recyclant et en soutenant les énergies renouvelables, nous pouvons contribuer à préserver l'environnement pour les générations futures.", time: '21:27' },
   { id:"D0978",name: 'yann hallage',  creationticket : '15/01/2024',Priorité : 'Resolu',statut : 'Resolu', message: 'Prendre soin de sa santé mentale est aussi important que sa santé physique. Parler de ses émotions, pratiquer la méditation et avoir des moments de détente peuvent améliorer notre bien-être mental et émotionnel.', time: '21:27' },
 ];
+
+
+export const tickets = [
+    { name: 'Nouveau', count: 1 },
+    { name: 'En cours (Attribué)', count: 0 },
+    { name: 'En cours (Planifié)', count: 0 },
+    { name: 'En attente', count: 0 },
+    { name: 'Résolu', count: 6 },
+    { name: 'Clôs', count: 1 },
+    { name: 'Supprimé', count: 1 },
+];

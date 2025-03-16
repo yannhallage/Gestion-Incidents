@@ -1,17 +1,8 @@
 import React from 'react';
 import InfoAlert from "../../../components/infoAlert"; // Gardé au cas où vous souhaiteriez le réutiliser
-
+import { tickets } from '../../../api/apiDataFirste';
 const Sidebar = () => {
     // Données des tickets (comme dans la réponse précédente)
-    const tickets = [
-        { name: 'Nouveau', count: 1 },
-        { name: 'En cours (Attribué)', count: 0 },
-        { name: 'En cours (Planifié)', count: 0 },
-        { name: 'En attente', count: 0 },
-        { name: 'Résolu', count: 6 },
-        { name: 'Clôs', count: 1 },
-        { name: 'Supprimé', count: 1 },
-    ];
 
     return (
         <>
