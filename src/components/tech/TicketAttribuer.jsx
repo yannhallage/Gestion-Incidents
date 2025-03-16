@@ -44,15 +44,6 @@ const CreateTickect = () => {
     marginLeft: '10px',
   };
 
-  // Augmenter les données pour tester le défilement
-  // Données des discussions (vous pouvez les récupérer depuis une API ou un état)
-  // const extendedChats = [
-  //   { name: 'Moko', message: "Bonjour , sa quelque semaines que mon pc est devenir bizzare il fontionnait parfaitement avant mais dans cst dernier jour , L'ordinateur s'allume mais l'écran reste noir. ", time: '19:39', unread: 1 },
-  //   { name: 'Tyrrell', message: "her products were impacted, resulting in failed requests or stale data. The connectivity issue self-resolved after 90 minutes. The backlog of indexing jobs was fully processed and saw recovery soon after, and queries to all indexes also saw an immediate return to normal throughput.", time: '03/03/2025' },
-  //   { name: 'M.A ♥', message: "We are working with our cloud provider to identify the root cause and are researching additional layers of redundancy to reduce customer impact in the future for issues like this one. We are also exploring mitigation strategies for faster resolution", time: '22:10' },
-  //   { name: 'Dion Inès', message: 'An unexpected data shape led to crashes in some of our pods. We mitigated the incident by excluding the affected pods and correcting the data that led to the crashes. We’ve fixed the source of the unexpected data shape and have improved the overall resilience of our service', time: '21:27' },
-  //   { name: 'yann hallage', message: 'es are typically not a concern because we can fail over to healthier replicas. However, due to an unrelated issue, there was a replication delay at the time of the incident, and failing over would have caused a greater impact on our customers. We are working on improving our resiliency and automation processes for this infrastruct', time: '21:27' },
-  // ];
 
   useEffect(() => {
     if (apiC !== null) {
@@ -74,7 +65,7 @@ const CreateTickect = () => {
       <div className="flex flex-col bg-white flex-1 items-center justify-center" >
         <div style={chatListStyle}>
           {extendedChatss.map((chat, index) => (
-            <div key={index} style={chatItemStyle}>
+            <div key={index} style={chatItemStyle} className='hover:bg-[#F5F7F8]'>
               <span className="text-[#ccc]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

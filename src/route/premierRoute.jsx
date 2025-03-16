@@ -4,6 +4,7 @@ import Personal from "../pages/personal";
 import Connexion from "../pages/connexion"
 import Inscription from "../pages/inscription"
 import Technicien from "../pages/technicien"
+import MainAdmin from "../components/admin/MainAdmin"
 
 const PremierRoute = () => {
   return (
@@ -17,7 +18,7 @@ const PremierRoute = () => {
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={< Inscription/>} />
         <Route path="/technicien" element={< Technicien/>} />
-        {/* <Route path="/admin" element={< Inscription/>} /> */}
+        <Route path="/admin" element={< MainAdmin/>} />
       </Routes>
     </Router>
   );

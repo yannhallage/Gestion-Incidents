@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #2D336B;
+  color: white;
+  padding: 5px 20px;
+  height: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.navbar-search input {
+  width: 400px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.navbar-region select {
+  background-color: #003087;
+  color: white;
+  border: none;
+  font-size: 14px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.navbar-region select:focus {
+  outline: none;
+}
+
+.navbar-icons {
+  margin-left: auto;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-icons .icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Optionnel : Ajouter une transition pour le select */
+.navbar-region select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 5px 30px 5px 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}

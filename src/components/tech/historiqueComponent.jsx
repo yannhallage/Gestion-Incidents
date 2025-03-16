@@ -25,13 +25,6 @@ const HistoriqueComponent = () => {
         borderBottom: '1px solid',
     };
 
-    const chatImageStyle = {
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        marginRight: '10px',
-    };
-
     const chatDetailsStyle = {
         flexGrow: 1,
     };
@@ -52,13 +45,6 @@ const HistoriqueComponent = () => {
         marginLeft: '10px',
     };
 
-    const chatUnreadStyle = {
-        backgroundColor: '#075e54',
-        color: 'white',
-        padding: '2px 8px',
-        borderRadius: '50%',
-        fontSize: '12px',
-    };
 
     // Augmenter les données pour tester le défilement
 // Données des discussions (vous pouvez les récupérer depuis une API ou un état)
@@ -94,9 +80,9 @@ const extendedChats = [
                     <hr />
                 </div>
                 <div className="flex flex-col bg-white flex-1 items-center justify-center" >
-                    <div style={chatListStyle}>
+                    <div style={chatListStyle} >
                         {extendedChats.map((chat, index) => (
-                            <div key={index} style={chatItemStyle}>
+                            <div key={index} style={chatItemStyle} className='hover:bg-[#F5F7F8]'>
                                 <span className="text-[#ccc]">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +100,7 @@ const extendedChats = [
                                     </svg>
                                 </span>
 
-                                <div style={chatDetailsStyle} className="ml-2 mt-2">
+                                <div style={chatDetailsStyle} className="ml-2 mt-2 ">
                                     <div style={chatNameStyle} className="flex space-x-3">
                                         <span
                                             className="text-[14px] cursor-pointer"

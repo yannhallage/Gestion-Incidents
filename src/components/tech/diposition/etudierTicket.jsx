@@ -7,7 +7,7 @@ import ButtonClassic from '../../buttonClassic'
 const EtudierTicker = ({ donnee }) => {
 
     const [modifierTicket, setModifierTicket] = useState(false)
-    const [message , setMessage] = useState(null)
+    const [message, setMessage] = useState(null)
     const [conclus, setConclus] = useState(false)
     const [chatss, setChatss] = useState(extendedChatss); // Gérer les données comme un état
 
@@ -23,7 +23,7 @@ const EtudierTicker = ({ donnee }) => {
         setConclus(!conclus)
     };
 
-    const infoMessage = (message)=>{
+    const infoMessage = (message) => {
         setMessage(message)
     }
     const closeModifierTiket = () => setModifierTicket(!modifierTicket)
@@ -94,10 +94,7 @@ const EtudierTicker = ({ donnee }) => {
                                     color={'border  text-[#555] bg-[#EFF3EA] hover:bg-[#fff] p-2 rounded-full cursor-pointer border-[#ccc] text-[14px]'}
                                     event={closeModifierTiket}
                                 />
-                                <ButtonClassic
-                                    tile={"contacter l'utilisateur"}
-                                    color={'border text-[#555]  bg-[#EFF3EA] hover:bg-[#fff] p-2 rounded-full cursor-pointer border-[#ccc] text-[14px]'}
-                                />
+
                                 <ButtonClassic
                                     tile={'conclus la panne'}
                                     color={'border text-[#555]  bg-[#EFF3EA] hover:bg-[#fff] p-2 rounded-full cursor-pointer border-[#ccc] text-[14px]'}
@@ -108,7 +105,7 @@ const EtudierTicker = ({ donnee }) => {
 
                         <div className="mt-6">
                             {modifierTicket && <SelectComponent donnees={donnee} updateTicket={updateTicket} fonction={closeModifierTiket} />}
-                            {conclus &&  <SecondSelect donnees={donnee} updateConclusion={updateTicketConclusion} />}
+                            {conclus && <SecondSelect donnees={donnee} updateConclusion={updateTicketConclusion} />}
                         </div>
                     </div>
                 </div>
@@ -136,14 +133,14 @@ const SelectComponent = ({ donnees, updateTicket, fonction }) => {
                 title: "Your work has been saved",
                 showConfirmButton: false,
                 timer: 1500
-              });
-        }else{
+            });
+        } else {
             Swal.fire({
                 icon: "error",
                 title: "champ vide",
                 text: "veuillez remplir le champ",
                 footer: '<a href="#">avez vous un probleme ?</a>'
-              });
+            });
         }
     };
 
@@ -196,13 +193,13 @@ const SecondSelect = ({ donnees, updateConclusion }) => {
     const handleConclude = () => {
         if (description) {
             updateConclusion(description); // Mettre à jour la conclusion dans chatss
-        }else{
+        } else {
             Swal.fire({
                 icon: "error",
                 title: "champ vide",
                 text: "veuillez remplir le champ",
                 footer: '<a href="#">avez vous un probleme ?</a>'
-              });
+            });
         }
     };
 

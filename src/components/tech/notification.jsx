@@ -80,9 +80,9 @@ const Notification = () => {
                 <div className="mt-5">
                     <hr />
                     <div className="flex flex-col bg-white flex-1 items-center justify-center ">
-                        <div style={chatListStyle}>
+                        <div style={chatListStyle} >
                             {chats.map((chat, index) => (
-                                <div key={index} style={chatItemStyle}>
+                                <div key={index} style={chatItemStyle} className='hover:bg-[#F5F7F8]'>
                                     {/* <img src="https://via.placeholder.com/40" alt={chat.name} style={chatImageStyle} /> */}
                                     <span className="text-[#ccc]">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
