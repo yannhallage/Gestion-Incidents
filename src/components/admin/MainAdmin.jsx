@@ -1,7 +1,8 @@
 import MenuComponent from "./disposition/MenuComponent";
+import '../../styles/body.css'
+const MainAdmin = () => {
 
-const MainAdmin = ()=>{
-    return(
+    return (
         <>
             <MenuComponent />
         </>
