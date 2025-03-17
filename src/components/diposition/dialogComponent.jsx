@@ -10,7 +10,7 @@ const DialogComponent = ({ donnee }) => {
     }
     return (
         <>
-            <div className="border border-[#ccc] p-5 text-black text-[14px]">
+            <div className="w-full px-3 py-2 bg-gray-50 text-gray-800 text-sm border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                 <div className="">
                     <div className="">
                         <span className="text-2xl">

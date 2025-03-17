@@ -79,7 +79,7 @@ const extendedChats = [
                 <div className="mt-5">
                     <hr />
                 </div>
-                <div className="flex flex-col bg-white flex-1 items-center justify-center" >
+                <div className="flex flex-col bg-white flex-1 items-center  justify-center" >
                     <div style={chatListStyle} >
                         {extendedChats.map((chat, index) => (
                             <div key={index} style={chatItemStyle} className='hover:bg-[#F5F7F8]'>

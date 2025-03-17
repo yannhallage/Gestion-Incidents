@@ -27,7 +27,7 @@ const DialogMessage = ({ donnee }) => {
     };
 
     return (
-        <div className="border w-full border-[#ccc] p-5 text-black text-[14px]">
+        <div className="border w-full border-gray-300 p-6 rounded-md bg-white p-5 text-gray-800  text-sm">
             <h3 className="text-lg font-bold mb-3">Discussion</h3>
 
             {/* Zone des messages */}
@@ -48,7 +48,7 @@ const DialogMessage = ({ donnee }) => {
             {/* Zone de saisie et d'envoi */}
             <div className="mt-3 flex space-x-2">
                 <textarea
-                    className="w-full p-2 border border-gray-400 text-black resize-none h-20"
+                    className="w-full px-3 py-2 bg-gray-50 text-gray-800 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Tapez votre message..."
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}

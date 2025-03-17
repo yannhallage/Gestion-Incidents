@@ -75,8 +75,9 @@ const UserProfile = () => {
 
             {/* Contenu principal */}
             <main className="flex-1 p-6 overflow-y-auto">
-                <h1 className="text-2xl font-semibold text-gray-800 mb-6">Utilisateur</h1>
-
+                <div className=''>
+                    <h1 className="text-2xl font-semibold text-gray-800 mb-6">Utilisateur</h1>
+                </div>
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>

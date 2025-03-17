@@ -10,7 +10,7 @@ export const ticketsData = [
         priorite: "Haute",
         categorie: "Réseau",
         utilisateurId: "#U12345",
-        technicien: "Jean Dupont",
+        technicien: "technicien 1",
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ export const ticketsData = [
         priorite: "Moyenne",
         categorie: "Logiciel",
         utilisateurId: "#U67890",
-        technicien: "Sophie Martin",
+        technicien: "technicien 2",
     },
     {
         id: 3,
@@ -36,6 +36,6 @@ export const ticketsData = [
         priorite: "Basse",
         categorie: "Matériel",
         utilisateurId: "#U54321",
-        technicien: "Marc Dubois",
+        technicien: "technicien 3",
     },
 ];

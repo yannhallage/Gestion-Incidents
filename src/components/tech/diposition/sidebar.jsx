@@ -40,13 +40,13 @@ const Sidebar = () => {
                 </div>
 
                 {/* Liste des tickets dans la dernière div */}
-                <div className="flex flex-col space-y-2 text-[13px] mt-7 flex-1 items-center justify-center">
+                <div className="flex flex-col space-y-2 text-[13px]  mt-7 flex-1 items-center justify-center">
                     <div className='text-[20px] text-black'>
                         <span>
                             vue globale
                         </span>
                     </div>
-                    <div className="w-full border border-[#ccc] rounded-lg overflow-hidden">
+                    <div className="w-full border border-[#ccc] bg-white  rounded-lg overflow-hidden">
                         {tickets.map((ticket, index) => (
                             <div
                                 key={index}

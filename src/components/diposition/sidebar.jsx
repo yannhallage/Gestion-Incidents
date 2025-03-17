@@ -61,7 +61,7 @@ const Sidebar = () => {
                             vue globale
                         </span>
                     </div>
-                    <div className="w-full  border border-[#ccc] rounded-lg overflow-hidden">
+                    <div className="w-full  border border-[#ccc] bg-white rounded-lg overflow-hidden">
                         {tickets.map((ticket, index) => (
                             <div
                                 key={index}
